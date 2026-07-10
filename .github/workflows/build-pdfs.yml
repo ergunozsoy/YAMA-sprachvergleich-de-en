@@ -1,0 +1,52 @@
+name: Build PDFs & index
+
+on:
+  push:
+    paths:
+      - "content.py"
+      - "gen_pdfs.py"
+      - "build_index.py"
+      - "index.template.html"
+      - "YAMA_WERKSTATT.md"
+      - ".github/workflows/build-pdfs.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install system libraries for WeasyPrint
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libpango-1.0-0 libpangocairo-1.0-0 libcairo2 libgdk-pixbuf-2.0-0 libffi-dev
+
+      - name: Install Python dependencies
+        run: pip install -r requirements.txt
+
+      - name: Build index.html
+        run: python3 build_index.py
+
+      - name: Generate PDFs
+        run: python3 gen_pdfs.py
+
+      - name: Commit regenerated files
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add index.html werkstatt.pdf fazit.pdf themen/ arbeitsblaetter/ literatur/
+          if git diff --staged --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "CI: rebuild index.html and PDFs"
+            git push
+          fi
