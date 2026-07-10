@@ -107,6 +107,7 @@ Einbindung als ergänzendes Material in die persönliche LMU-Seite.
 
 | Datum | Änderung |
 |---|---|
+| Juli 2026 | Literatur erweitert nach Sichtung der LMU-DaZ-Quellensammlung (11 Scans geprüft, Zitate verifiziert): Rubrik „Grundlagen“ um Rösch 2011 und Gebele 2018 ergänzt, Benholz/Lipkowski 2010 (Fehleranalyse) aufgenommen; ●-Markierung „im Projekt“ eingeführt. Parallel in der DE–TR-Fassung (+ Şahiner 2012, Belke 2012). |
 | Juli 2026 | Erstfassung der englischen Plattform: 20 Themen (L1 Englisch), 4 Arbeitsblätter, Literaturseite (verifiziert); Werkstattbericht angelegt. |
 
 *Neue Einträge oben anfügen — eine Zeile pro Entwicklungsschritt genügt.*

@@ -477,6 +477,8 @@ LIT = {
        q="Ann Arbor: University of Michigan Press (klassische Kontrastivhypothese)"),
   dict(a="Swan, Michael / Smith, Bernard (Hg.)", y="2001", t="Learner English. A Teacher’s Guide to Interference and other Problems",
        q="2. Aufl. Cambridge: Cambridge University Press"),
+  dict(a="Benholz, Claudia / Lipkowski, Eva", y="2010", t="Fehler und Fehlerkorrektur bei schriftlichen Arbeiten von mehrsprachigen Schülerinnen und Schülern",
+       q="in: Bainski/Krüger-Potratz (Hg.), Handbuch Sprachförderung, 2. Aufl., 132–143. Essen: NDS Verlagsgesellschaft", proj=True),
  ],
  "DaF/DaZ, Mehrsprachigkeit & Didaktik (aktuell)": [
   dict(a="Roche, Jörg", y="2020", t="Fremdsprachenerwerb – Fremdsprachendidaktik",
@@ -493,9 +495,13 @@ LIT = {
        q="Deutschunterricht in Theorie und Praxis, Bd. 9; 4. Aufl. Baltmannsweiler: Schneider Verlag Hohengehren"),
   dict(a="Hoffmann, L. / Kameyama, S. / Riedel, M. / Şahiner, P. / Wulff, N. (Hg.)", y="2017",
        t="Deutsch als Zweitsprache. Ein Handbuch für die Lehrerausbildung",
-       q="Berlin: Erich Schmidt Verlag (mit kontrastivem Überblick über Partnersprachen)"),
+       q="Berlin: Erich Schmidt Verlag (mit kontrastivem Überblick über Partnersprachen)", proj=True),
   dict(a="Jeuk, Stefan", y="2018", t="Deutsch als Zweitsprache in der Schule. Grundlagen – Diagnose – Förderung",
-       q="4. Aufl. Stuttgart: W. Kohlhammer", cur=True),
+       q="4. Aufl. Stuttgart: W. Kohlhammer", cur=True, proj=True),
+  dict(a="Rösch, Heidi", y="2011", t="Deutsch als Zweit- und Fremdsprache",
+       q="Berlin: Akademie Verlag (Studienbuch; Kap. 2: Hypothesen des Zweitspracherwerbs)", proj=True),
+  dict(a="Gebele, Diana", y="2018", t="Grammatik im Deutschunterricht mit neu zugewanderten Schülerinnen und Schülern",
+       q="in: Gebele/Zepter (Hg.), Deutsch als Zweitsprache. Unterricht mit neu zugewanderten Kindern und Jugendlichen, 158–173. Baltmannsweiler: Schneider Hohengehren", cur=True, proj=True),
   dict(a="Michalak, Magdalena / Kuchenreuther, Michaela (Hg.)", y="2015",
        t="Grundlagen der Sprachdidaktik Deutsch als Zweitsprache",
        q="3. Aufl. Baltmannsweiler: Schneider Verlag Hohengehren"),
@@ -506,11 +512,12 @@ LIT = {
   dict(a="Topalović, Elvira / Michalak, Magdalena", y="2015", t="Sprachreflexion und Grammatik zwischen DaM und DaZ",
        q="in: Michalak/Kuchenreuther (Hg.), Grundlagen der Sprachdidaktik DaZ, 226–250"),
   dict(a="Chlosta, Christoph / Schäfer, Andrea / Baur, Rupprecht S.", y="2017", t="Fehleranalyse",
-       q="in: Ahrenholz/Oomen-Welke (Hg.), Deutsch als Zweitsprache (Bd. 9), 353–368"),
+       q="in: Ahrenholz/Oomen-Welke (Hg.), Deutsch als Zweitsprache (Bd. 9), 353–368", proj=True),
  ],
 }
 LIT_INTRO = ("Auswahlbibliografie zum Sprachvergleich Deutsch–Englisch und zur DaF/DaZ-Didaktik. "
-  "Mit ✦ markierte Titel sind aktuelle bzw. jüngst aufgelegte Standardwerke (2018+). "
+  "Mit ● markierte Titel liegen als Referenzmaterial im Projekt vor; mit ✦ markierte sind "
+  "aktuelle bzw. jüngst aufgelegte Standardwerke (2018+). "
   "Die letzte Rubrik versammelt didaktische und zweitspracherwerbliche Grundlagenwerke "
   "(sprachübergreifend, u. a. aus den DaZ-Literaturempfehlungen der LMU). "
   "Die Liste dient als Referenz – Konzept und Inhalt der Plattform stammen von Dr. Ergun Özsoy.")
