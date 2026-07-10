@@ -83,7 +83,7 @@ DETAIL["alphabet"]=dict(
     ("⟨j⟩",f"[j] – {d('ja, Jahr')}",f"[dʒ] – {e('jam, June')}"),
     ("⟨z⟩",f"[ts] – {d('Zeit, Zoo')}",f"[z] – {e('zoo, zebra')}"),
     ("⟨s⟩ vor Vokal",f"[z] – {d('Sonne, Sie')}",f"[s] – {e('sun, see')}"),
-    ("Digraphe",f"{d('ei')}=[aɪ], {d('ie')}=[iː], {d('eu/äu')}=[ɔɪ]",f"{e('ei')} oft [iː]; {e('ie')} variabel"),],
+    ("Digraphe",f"{d('ei')}=[aɪ], {d('ie')}=[iː], {d('eu/äu')}=[ɔɪ]",f"{e('ei')} meist [eɪ]/[aɪ] – {e('eight, height')}; {e('ie')} variabel"),],
     head=("Graphem","Deutsch","Englisch"))
   +NOTE("Kernpunkt: Ein Buchstabe hat keinen universellen Lautwert. Die englischen Werte sind nicht falsch – sie gelten nur in der L1."),
   P("Betroffen sind Aussprache <i>und</i> Lesetechnik: Wer ⟨w v j z⟩ englisch liest, verliest sich systematisch. Besonders zäh ist ⟨w⟩=[v] und die Verwechslung von ⟨ei⟩ und ⟨ie⟩ (<i>Wein</i> vs. <i>wie</i>). Früh im Lernprozess zu sichern."),
@@ -101,7 +101,7 @@ DETAIL["konsonanten"]=dict(
  blocks=[
   T([("ach-Laut [x]",f"{d('nach, Bach, doch')}","kein Äquivalent (nur schott. <i>loch</i>)"),
     ("ich-Laut [ç]",f"{d('ich, Milch, nicht')}",f"nur ähnlich in {e('huge, hue')} [hj]"),
-    ("⟨r⟩",f"uvular [ʁ] / vokalisiert [ɐ] – {d('rot, Vater')}",f"retroflex/rhotisch [ɹ] – {e('red')}"),
+    ("⟨r⟩",f"uvular [ʁ] / vokalisiert [ɐ] – {d('rot, Vater')}",f"(post)alveolarer Approximant [ɹ] – {e('red')}"),
     ("⟨l⟩",f"stets „hell“ [l] – {d('voll, alt')}",f"„dark l“ [ɫ] – {e('full, all')}"),
     ("Affrikaten",f"{d('pf')} (Pferd), {d('z')} [ts] (Zeit)","ungewohnte Anlautcluster"),],
     head=("Laut / Graphem","Deutsch","Englisch"))
@@ -109,7 +109,7 @@ DETAIL["konsonanten"]=dict(
   P("Betroffen sind Aussprache und Hörverstehen. ich-/ach-Laut sind die deutlichsten Akzentmarker; die Vokalisierung von ⟨-er⟩ am Wortende ("+d("Vater")+" [ˈfaːtɐ]) wird oft als volles [r] realisiert."),
   ITAB([("[k] für ⟨ch⟩ (Bach → „Bak“)","[x]",f"englisch fehlt [x] → Ersatz durch [k]","interlingual"),
         ("[ʃ] für ich-Laut (ich → „isch“)","[ç]","Ersatz durch nächstliegenden L1-Laut","interlingual"),
-        ("retroflexes [ɹ] für ⟨r⟩","[ʁ] / [ɐ]","englische Rhotizität übertragen","interlingual"),
+        ("englisches [ɹ] für ⟨r⟩","[ʁ] / [ɐ]","englische Rhotizität übertragen","interlingual"),
         ("„dark l“ in voll","helles [l]","englisches [ɫ] übertragen","interlingual")]),
   P("ich-Laut über <i>huge/hue</i> anbahnen; ach-Laut aus dem hinteren [k]-Bereich mit Reibung entwickeln; vokalisiertes ⟨-er⟩ als [ɐ] üben; helles [l] isolieren; Minimalpaare (<i>Kirche/Kirsche</i>, <i>Loch/Koch</i>)."),
   P("Der englische h-Anlaut in <i>huge</i> liegt nahe am ich-Laut – eine nutzbare <b>Brücke</b>. Auch das vokalisierte deutsche ⟨-er⟩ ähnelt dem englischen Schwa. Vorhandene Laute dienen als Anker für die neuen."),
@@ -119,7 +119,7 @@ DETAIL["auslaut"]=dict(
  modul="Modul I · Laut & Schrift", titel="Auslautverhärtung",
  lead="Das Deutsche entstimmt Plosive am Wortende (Tag [taːk]) und behält dennoch die Schreibung bei. Das Englische entstimmt <i>nicht</i> (dog [dɒg]). Für Englischsprachige liegt die Hürde also im Sprechen, kaum in der Schreibung.",
  blocks=[
-  T([("Prozess",f"Entstimmung {d('/b d g/ → [p t k]')} am Wortende","keine finale Entstimmung"),
+  T([("Prozess",f"Entstimmung der Obstruenten am <b>Silben-/Wortende</b>: {d('/b d g/ → [p t k]')}, auch {d('/v z/ → [f s]')}","keine finale Entstimmung"),
     ("gesprochen",f"{d('Tag')} [taːk], {d('Hund')} [hʊnt], {d('lieb')} [liːp]",f"{e('dog')} [dɒg], {e('bad')} [bæd] – stimmhaft"),
     ("Verschriftung",f"morphophonemisch: Graphem bleibt ({d('Tag – Tage')})",f"stimmhaft gesprochen <i>und</i> geschrieben"),])
   +NOTE("Kernpunkt: Die Schreibung fällt Englischsprachigen leicht (sie schreiben ⟨d/g/b⟩ ohnehin); neu ist nur die Aussprache­regel „am Ende entstimmen“."),
@@ -197,7 +197,7 @@ DETAIL["kasus"]=dict(
   +NOTE("Dieselben Rollen kodiert das Englische über die Stellung ("+e("the man sees the dog")+" ≠ "+e("the dog sees the man")+") – die Funktion ist bekannt, nur die Markierung ist neu."),
   P("Die Endungen an Artikel und Adjektiv sind der Kern; die Opposition Nom/Akk ("+d("der/den")+") ist subtil, der Dativ nach bestimmten Verben und Präpositionen zusätzlich. Die englischen Pronomenformen (<i>me, him, her</i>) sind der beste Anker."),
   ITAB([("Ich sehe der Mann.","Ich sehe den Mann.","Akkusativ am Artikel nicht markiert (engl. kein Kasus)","interlingual"),
-        ("Ich helfe die Frau.","Ich helfe der Frau.","Dativ-Verb nicht erkannt","intralingual"),
+        ("Ich helfe die Frau.","Ich helfe der Frau.","Dativ-Verb nicht erkannt; engl. help + direktes Objekt","interlingual"),
         ("mit mein Bruder","mit meinem Bruder","Dativrektion der Präposition nicht realisiert","interlingual")]),
   P("Kasustabelle ("+d("der/den/dem/des")+"); Analogie zu englischen Pronomen ("+e("I / me / to me")+" → "+d("er / ihn / ihm")+"); Wechsel- und feste Präpositionen; Dativ-Verben-Liste (helfen, danken, folgen, gehören); Akk/Dat über <i>wen?/wem?</i>."),
   P("Das Englische bewahrt Kasus im Pronomen ("+e("I–me–my, he–him–his, who–whom")+") – ein lebendiger Rest. Auf „<i>him</i> = ihm“ aufzubauen lässt das deutsche System als <b>Erweiterung</b> erscheinen, nicht als Neuland. Und die Einsicht „Stellung kodiert Rolle“ erklärt umgekehrt, warum das Deutsche freier umstellen darf."),
@@ -215,7 +215,7 @@ DETAIL["plural"]=dict(
   P("Plural nicht ableitbar → mit Artikel mitlernen. Typische Fehler: das englische -s wird übergeneralisiert, und der Umlaut als Pluralsignal wird übersehen."),
   ITAB([("die Mans / Manns","die Männer","englisches -s übergeneralisiert, Umlaut fehlt","interlingual"),
         ("die Buchs","die Bücher","-s statt -er + Umlaut","interlingual"),
-        ("die Fraus","die Frauen","falscher Pluraltyp gewählt","intralingual")]),
+        ("die Fraus","die Frauen","englisches -s übergeneralisiert","interlingual")]),
   P("Pluraltypen in Gruppen mit Artikel üben; Regel „nach Fremd-/Kurzwörtern steht -s, sonst nicht“; Umlaut als Pluralsignal markieren; Kognaten-Brücke <i>man/men → Mann/Männer</i>."),
   P("Englisch <i>man/men, foot/feet, tooth/teeth, mouse/mice, goose/geese</i> sind genau der i-Umlaut – historisch identisch mit "+d("Mann/Männer, Fuß/Füße, Zahn/Zähne, Maus/Mäuse")+". Diese lebenden Kognaten sind der Beweis, dass der Mechanismus im Englischen existiert – der deutsche Umlautplural fühlt sich dann vertraut an."),
  ])
@@ -264,7 +264,7 @@ DETAIL["verben"]=dict(
   P("Große Baustellen: trennbare Verben mit der <b>Verbklammer</b> und die Hilfsverbwahl (haben/sein). Die Personalendungen sind reicher als im Englischen (nur -s in der 3. Sg.)."),
   ITAB([("Ich aufstehe um 7.","Ich stehe um 7 auf.","Präfix nicht abgetrennt (engl. phrasal bleibt zusammen)","interlingual"),
         ("Ich habe gegangen.","Ich bin gegangen.","Hilfsverbwahl (Bewegung → sein); engl. „have gone“","interlingual"),
-        ("er gehen / er geht-s","er geht","Personalendung -t nicht realisiert","intralingual")]),
+        ("er geht-s","er geht","englisches 3.-Sg.-s übertragen","interlingual")]),
   P("Trennbare Verben mit der <b>Satzklammer</b> visualisieren ("+d("steht … auf")+"); haben/sein-Regeln (Bewegung/Zustandswechsel → sein); starke Reihen über Kognaten sichern ("+d("trinken/drink, beginnen/begin")+"); Personalendungen automatisieren."),
   P("Das Englische bewahrt rund 150 starke Verben mit demselben Ablaut ("+e("drink/drank/drunk")+" = "+d("trinken/trank/getrunken")+", "+e("begin/began/begun")+" = "+d("beginnen/begann/begonnen")+"). Und phrasal verbs ("+e("give up, look after")+") funktionieren semantisch wie trennbare Präfixe – das Konzept überträgt sich; neu ist nur die Klammer­stellung."),
  ])
@@ -292,7 +292,7 @@ DETAIL["konjunktiv"]=dict(
  blocks=[
   T([("Irrealis",f"K II: {d('käme, hätte, würde … kommen')}",f"{e('would come, if I were')}"),
     ("Höflichkeit",f"K II: {d('Ich hätte gern …, Könnten Sie …')}",f"{e('I would like …, Could you …')}"),
-    ("Indirekte Rede",f"K I: {d('er sagt, er komme')}",f"backshift: {e('he said he came')}"),],
+    ("Indirekte Rede",f"K I: {d('er sagte, er komme')}",f"backshift: {e('he said he was coming')}"),],
     head=("Funktion","Deutsch","Englisch"))
   +NOTE("Die Irrealis- und Höflichkeits­funktion kennt das Englische (would/could) – gute Brücke; K I ist neu."),
   P("K II (Irrealis + Höflichkeit) ist für den Alltag am wichtigsten; K I (indirekte Rede) ist bildungssprachlich/journalistisch und im Englischen ohne direktes Äquivalent."),
@@ -338,11 +338,11 @@ DETAIL["praep"]=dict(
 # -------------------------------------------------------------- Modul III --
 DETAIL["satzart"]=dict(
  modul="Modul III · Syntax", titel="Satzarten & Fragebildung",
- lead="Das Deutsche bildet Ja/Nein-Fragen durch Voranstellung des finiten Verbs (Kommst du?); das Englische nutzt do-support (Do you come?). Die Übertragung von „do“ ist eine klassische Interferenz.",
+ lead="Das Deutsche bildet Ja/Nein-Fragen durch Voranstellung des finiten Verbs (Spielst du Tennis?); das Englische nutzt do-support (Do you play tennis?). Die Übertragung von „do“ ist eine klassische Interferenz.",
  blocks=[
   T([("Aussage","Verbzweit (V2)","SVO"),
-    ("Ja/Nein-Frage",f"Verb voran: {d('Kommst du?')}",f"do-support: {e('Do you come?')}"),
-    ("W-Frage",f"W-Wort + V2: {d('Wann kommst du?')}",f"W-Wort + do: {e('When do you come?')}"),],
+    ("Ja/Nein-Frage",f"Verb voran: {d('Spielst du Tennis?')}",f"do-support: {e('Do you play tennis?')}"),
+    ("W-Frage",f"W-Wort + V2: {d('Wann kommst du?')}",f"W-Wort + do: {e('When do you play?')}"),],
     head=("Satztyp","Deutsch","Englisch"))
   +NOTE("Das Deutsche braucht kein Hilfsverb „tun“ – die Inversion genügt; das englische „do“ hat kein deutsches Äquivalent."),
   P("Der Knackpunkt ist die Fragebildung: Deutsch stellt das finite Verb voran (Inversion), Englisch schiebt „do“ ein. Die W-Frage verlangt zusätzlich Verbzweitstellung."),
@@ -555,8 +555,9 @@ GUIDE = dict(
    "<li><b>Nach Priorität:</b> im Menü <i>★ Nach Priorität</i> – Themen sortiert nach Häufigkeit, "
    "Fossilisierungsgefahr und Lehrplan-Gewicht; <span class='kern' style='padding:1px 7px'>★ Kern</span>-Themen "
    "lohnen den frühesten Zugriff.</li>"
-   "<li><b>Anlassbezogen (diagnostisch):</b> von einer beobachteten Lernerform ausgehen – über die "
-   "<i>Suche</i> das passende Thema finden und die Interferenzanalyse als Diagnosehilfe nutzen.</li></ul>"),
+   "<li><b>Anlassbezogen (diagnostisch):</b> von einer beobachteten Lernerform ausgehen – die <i>Suche</i> "
+   "findet auch Lernerformen (z. B. „Heute ich gehe“) und führt zum passenden Thema; dort im "
+   "<b>🧠 Übungsmodus</b> Zielform, Ursache und Typ erst selbst bestimmen, dann aufdecken.</li></ul>"),
   ("Materialien zum Mitnehmen",
    P("Jedes Thema gibt es als <b>PDF-Dossier</b> (Button auf der Themenseite), dazu vier "
      "<b>Arbeitsblätter mit Lösungsschlüssel</b>, die <b>Literaturliste</b>, das <b>Fazit</b> und den "

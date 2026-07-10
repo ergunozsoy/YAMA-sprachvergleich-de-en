@@ -99,6 +99,8 @@
   .note{font-size:13px;color:var(--muted);font-style:italic}
   ul.li{margin:6px 0 6px 18px;padding:0} ul.li li{margin:5px 0}
   .frame{margin-top:18px;padding-top:14px;border-top:1px solid var(--line);font-size:12.5px;color:var(--muted)}
+  .qmask{display:inline-block;color:var(--muted);font-size:12px;cursor:pointer;border:1px dashed #bfc9bf;border-radius:8px;padding:2px 9px}
+  .qmask:hover{background:var(--bg)}
 
   .litcat{margin:22px 0 6px;font-family:var(--serif);color:var(--green);font-size:17px;border-bottom:1px solid var(--line);padding-bottom:6px}
   .lit{padding:9px 0;border-bottom:1px dashed #eee;font-size:14px;line-height:1.5}
@@ -294,7 +296,7 @@ function buildCards(){
   const c=document.getElementById('cards');
   MODULES.forEach(m=>m.topics.forEach(t=>{
     const ready=t.s==='ready';
-    const card=el(`<div class="tcard ${ready?'':'dis'}" data-name="${t.t.toLowerCase()}">
+    const card=el(`<div class="tcard ${ready?'':'dis'}" data-id="${t.id}" data-name="${t.t.toLowerCase()}">
       <div class="m">${m.name.split('·')[1].trim()} ${ready?'':'· in Vorbereitung'}</div>
       <h3>${t.t}</h3><p>${t.desc}</p>${prioHtml(t)}</div>`);
     if(ready) card.onclick=()=>openTopic(t.id);
@@ -310,7 +312,7 @@ function buildSheets(){
   });
 }
 function show(id){ ['home','detail','litpage','fazitpage','guidepage'].forEach(s=>document.getElementById(s).style.display=(s===id?'block':'none')); window.scrollTo(0,0); }
-function home(){ document.querySelectorAll('#nav a').forEach(a=>a.classList.remove('active')); show('home'); }
+function home(){ document.querySelectorAll('#nav a').forEach(a=>a.classList.remove('active')); show('home'); if(location.hash) location.hash=''; }
 
 function openTopic(id){
   const d=DETAIL[id]; if(!d){return;}
@@ -319,6 +321,7 @@ function openTopic(id){
   const dl=`<div class="dl">
      <a class="btn solid" href="themen/${id}.pdf" download>⬇ Themen-Dossier (PDF)</a>
      ${sheet?`<a class="btn gold" href="${sheet}" download>⬇ Arbeitsblatt (PDF)</a>`:''}
+     <span class="btn" onclick="toggleQuiz(this)" title="Zielform/Ursache/Typ verdecken und per Klick aufdecken">🧠 Übungsmodus</span>
      <span class="btn" onclick="home()">↑ Übersicht</span></div>`;
   const blocks=d.blocks.map((b,i)=>`<div class="block"><h2><span class="n">${i+1}</span>${BLOCKNAMES[i]}</h2>${b}</div>`).join('');
   document.getElementById('detail').innerHTML=
@@ -328,6 +331,7 @@ function openTopic(id){
      <div class="frame">Lernerformen werden nach Ursache eingeordnet: <i>intralingual</i> (systematisch) vs. <i>interlingual</i> (aus der L1).
        Quellen siehe <a onclick="showLit()">Literatur</a>. · Konzept &amp; Inhalt: Dr. Ergun Özsoy, LMU München.</div>`;
   show('detail');
+  if(location.hash!=='#'+id) location.hash=id;
 }
 function showGuide(){
   const g=GUIDE; if(!g){return;}
@@ -339,6 +343,7 @@ function showGuide(){
     <div class="dl"><span class="btn" onclick="home()">↑ Zur Übersicht</span></div>${blocks}
     <div class="frame">Konzept &amp; Inhalt: Dr. Ergun Özsoy, LMU München.</div>`;
   show('guidepage');
+  if(location.hash!=='#wegweiser') location.hash='wegweiser';
 }
 function showFazit(){
   const f=FAZIT; if(!f){return;}
@@ -351,6 +356,7 @@ function showFazit(){
        <span class="btn" onclick="home()">↑ Übersicht</span></div>${blocks}
     <div class="frame">Konzept &amp; Inhalt: Dr. Ergun Özsoy, LMU München. Quellen siehe <a onclick="showLit()">Literatur</a>.</div>`;
   show('fazitpage');
+  if(location.hash!=='#fazit') location.hash='fazit';
 }
 function showLit(){
   let html=`<span class="back" onclick="home()">← zurück zur Übersicht</span>
@@ -368,17 +374,64 @@ function showLit(){
   html+=`<div class="frame">Auswahl als Referenzmaterial. Konzept &amp; alle Rechte: Dr. Ergun Özsoy, LMU München.</div>`;
   document.getElementById('litpage').innerHTML=html;
   show('litpage');
+  if(location.hash!=='#literatur') location.hash='literatur';
 }
 function filter(v){
   v=v.toLowerCase();
   if(v) document.querySelectorAll('.mod').forEach(m=>m.classList.remove('collapsed'));
-  document.querySelectorAll('#nav a').forEach(a=>a.style.display=a.dataset.name.includes(v)?'':'none');
-  document.querySelectorAll('#cards .tcard').forEach(c=>c.style.display=c.dataset.name.includes(v)?'':'none');
+  const hit=el=>{const id=el.dataset.id; return id&&SEARCH[id]?SEARCH[id].includes(v):el.dataset.name.includes(v);};
+  document.querySelectorAll('#nav a').forEach(a=>a.style.display=hit(a)?'':'none');
+  document.querySelectorAll('#cards .tcard').forEach(c=>c.style.display=hit(c)?'':'none');
 }
 document.getElementById('hfoot').innerHTML =
   `Konzept &amp; Inhalt: <b>Dr. Ergun Özsoy</b>, LMU München. `+
   `Verwendete Quellen ausschließlich auf der Seite <a onclick="showLit()">Literatur</a>.`;
-buildNav(); buildCards(); buildSheets();
+
+// --- Deep-Links (#thema, #literatur, #fazit, #wegweiser) ---
+function route(){
+  const h=decodeURIComponent(location.hash.slice(1));
+  if(!h){show('home');return;}
+  if(h==='literatur'){showLit();}
+  else if(h==='fazit'){showFazit();}
+  else if(h==='wegweiser'){showGuide();}
+  else if(DETAIL[h]){openTopic(h);}
+  else {show('home');}
+}
+window.addEventListener('hashchange', route);
+
+// --- Suchindex: Titel + Beschreibung + Lead + Lernerformen (ITAB) ---
+const SEARCH={};
+(function(){
+  const tmp=document.createElement('div');
+  MODULES.forEach(m=>m.topics.forEach(t=>{
+    let s=(t.t+' '+(t.desc||'')).toLowerCase();
+    const d=DETAIL[t.id];
+    if(d){ s+=' '+(d.lead||'').replace(/<[^>]+>/g,' ').toLowerCase();
+      d.blocks.forEach(b=>{ tmp.innerHTML=b;
+        tmp.querySelectorAll('.err').forEach(x=>s+=' '+x.textContent.toLowerCase()); });
+    }
+    SEARCH[t.id]=s;
+  }));
+})();
+
+// --- Übungsmodus: ITAB-Antworten verdecken ---
+function toggleQuiz(btn){
+  const on=!btn.classList.contains('solid');
+  btn.classList.toggle('solid',on);
+  document.querySelectorAll('#detail table').forEach(tb=>{
+    const th=tb.querySelector('th'); if(!th||th.textContent!=='Lernerform')return;
+    tb.querySelectorAll('tr').forEach((tr,ri)=>{ if(ri===0)return;
+      [...tr.children].slice(1).forEach(td=>{
+        if(on){ if(!td.dataset.orig) td.dataset.orig=td.innerHTML;
+          td.innerHTML='<span class="qmask">Antwort zeigen</span>';
+          td.onclick=()=>{td.innerHTML=td.dataset.orig; td.onclick=null;}; }
+        else if(td.dataset.orig){ td.innerHTML=td.dataset.orig; td.onclick=null; }
+      });
+    });
+  });
+}
+
+buildNav(); buildCards(); buildSheets(); route();
 </script>
 </body>
 </html>

@@ -107,6 +107,7 @@ Einbindung als ergänzendes Material in die persönliche LMU-Seite.
 
 | Datum | Änderung |
 |---|---|
+| Juli 2026 | Qualitätsdurchgang (Peer-/Studierenden-Review, 4 Perspektiven): 12 verifizierte Korrekturen in beiden Fassungen (u. a. echte Minimalpaare, Auslautverhärtung am Silbenende inkl. Frikative, idiomatisches do-support-Beispiel, Backshift-Tempus, konsistente interlingual/intralingual-Typisierung, türkische Beispiele kıl/kil, ben/beni/bana). Drei neue Funktionen: Deep-Links (#thema), Suche auch über Lernerformen, 🧠 Übungsmodus (Interferenztabellen als Selbsttest). |
 | Juli 2026 | Navigation neu geordnet: Meta-Seiten (Literatur, Werkstatt, Fazit) ans Ende der Sidebar; oben neue Seite „Wegweiser – so nutzen Sie diese Plattform“ (Aufbau, Lesekonventionen, drei Nutzungswege, Materialien). Kontakt-&-Feedback-Block am Sidebar-Ende (e.oezsoy@lmu.de). Parallel in der DE–TR-Fassung. |
 | Juli 2026 | Neue Seite „Fazit & Ausblick – Was der Sprachvergleich lehrt“: Synthese der Befunde, L1-Profil (Hürden/Ressourcen), didaktische Folgerungen, Grenzen; als eigene Seite + PDF, verlinkt in Sidebar und Startseite. Parallel in der DE–TR-Fassung. |
 | Juli 2026 | Literatur erweitert nach Sichtung der LMU-DaZ-Quellensammlung (11 Scans geprüft, Zitate verifiziert): Rubrik „Grundlagen“ um Rösch 2011 und Gebele 2018 ergänzt, Benholz/Lipkowski 2010 (Fehleranalyse) aufgenommen; ●-Markierung „im Projekt“ eingeführt. Parallel in der DE–TR-Fassung (+ Şahiner 2012, Belke 2012). |
