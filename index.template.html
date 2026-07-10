@@ -48,6 +48,10 @@
   .pill{font-size:10px;font-weight:700;padding:1px 7px;border-radius:9px;flex:none}
   .pill.ready{background:#e2f0e6;color:var(--green-d)} .pill.draft{background:#f1f1ef;color:#999}
   .side-foot{margin-top:22px;padding-top:14px;border-top:1px solid var(--line);font-size:11px;color:var(--muted)}
+  .side-contact{margin-top:18px;padding:12px 13px;border:1px solid var(--line);border-radius:10px;background:var(--bg)}
+  .side-contact .ch{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:4px}
+  .side-contact p{margin:0 0 8px;font-size:12px;color:var(--muted);line-height:1.45}
+  .side-contact a{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:600;color:var(--green-d);word-break:break-all}
 
   main{padding:30px clamp(20px,4vw,56px) 70px;max-width:1020px}
   .hero{background:linear-gradient(120deg,#063, var(--green));color:#fff;border-radius:18px;padding:30px 32px;margin-bottom:26px;box-shadow:0 12px 30px -16px rgba(0,80,40,.5)}
@@ -155,6 +159,11 @@
       <a onclick="showLit()">📚 <span>Literatur</span></a>
       <a href="werkstatt.pdf" target="_blank" rel="noopener">🛠️ <span>Werkstattbericht</span></a>
       <a onclick="showFazit()">🧭 <span>Fazit &amp; Ausblick</span></a>
+    </div>
+    <div class="side-contact">
+      <div class="ch">Kontakt &amp; Feedback</div>
+      <p>Hinweise, Korrekturen und Rückmeldungen sind willkommen – von Studierenden, Lehrenden und Fachkolleg:innen.</p>
+      <a href="mailto:e.oezsoy@lmu.de?subject=Feedback%3A%20Sprachvergleich%20DE-EN">✉️ e.oezsoy@lmu.de</a>
     </div>
     <div class="side-foot">Konzept &amp; Inhalt: Dr. Ergun Özsoy<br>LMU München · alle Rechte vorbehalten</div>
   </aside>
