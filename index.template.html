@@ -149,7 +149,8 @@
       <input id="q" placeholder="Thema suchen …" oninput="filter(this.value)">
     </div>
     <div class="navtop"><a onclick="showLit()">📚 <span>Literatur</span></a>
-      <a href="werkstatt.pdf" target="_blank" rel="noopener">🛠️ <span>Werkstattbericht</span></a></div>
+      <a href="werkstatt.pdf" target="_blank" rel="noopener">🛠️ <span>Werkstattbericht</span></a>
+      <a onclick="showFazit()">🧭 <span>Fazit &amp; Ausblick</span></a></div>
     <nav id="nav"></nav>
     <div class="side-foot">Konzept &amp; Inhalt: Dr. Ergun Özsoy<br>LMU München · alle Rechte vorbehalten</div>
   </aside>
@@ -209,6 +210,11 @@
           <p>Architektur, Arbeitsablauf und die Übertragung vom Türkischen ins Englische – ein reproduzierbares Digital-Humanities-Muster.</p>
           <div style="margin-top:11px"><a class="btn gold" href="werkstatt.pdf" target="_blank" rel="noopener">⬇ Werkstatt (PDF)</a></div>
         </div>
+        <div class="tcard" onclick="showFazit()">
+          <div class="m">Fazit</div><h3>Fazit &amp; Ausblick</h3>
+          <p>Was der Sprachvergleich lehrt: Befunde, das L1-Profil aus Hürden und Ressourcen, Folgerungen für den Unterricht.</p>
+          <div style="margin-top:11px"><a class="btn gold" href="fazit.pdf" download onclick="event.stopPropagation()">⬇ Fazit (PDF)</a></div>
+        </div>
       </div>
 
       <footer id="hfoot"></footer>
@@ -216,13 +222,14 @@
 
     <section class="detail" id="detail"></section>
     <section class="litpage" id="litpage"></section>
+    <section class="litpage" id="fazitpage"></section>
   </main>
 </div>
 
 <script>
 const APP = __APP_DATA__;
 const {modules:MODULES, detail:DETAIL, sheets:SHEETS, sheetFor:SHEET_FOR,
-       blocknames:BLOCKNAMES, lit:LIT, litIntro:LIT_INTRO} = APP;
+       blocknames:BLOCKNAMES, lit:LIT, litIntro:LIT_INTRO, fazit:FAZIT} = APP;
 
 function el(h){const d=document.createElement('div');d.innerHTML=h.trim();return d.firstChild;}
 
@@ -288,7 +295,7 @@ function buildSheets(){
       <div style="margin-top:11px"><a class="btn gold" href="${w.pdf}" download>⬇ PDF herunterladen</a></div></div>`));
   });
 }
-function show(id){ ['home','detail','litpage'].forEach(s=>document.getElementById(s).style.display=(s===id?'block':'none')); window.scrollTo(0,0); }
+function show(id){ ['home','detail','litpage','fazitpage'].forEach(s=>document.getElementById(s).style.display=(s===id?'block':'none')); window.scrollTo(0,0); }
 function home(){ document.querySelectorAll('#nav a').forEach(a=>a.classList.remove('active')); show('home'); }
 
 function openTopic(id){
@@ -307,6 +314,18 @@ function openTopic(id){
      <div class="frame">Lernerformen werden nach Ursache eingeordnet: <i>intralingual</i> (systematisch) vs. <i>interlingual</i> (aus der L1).
        Quellen siehe <a onclick="showLit()">Literatur</a>. · Konzept &amp; Inhalt: Dr. Ergun Özsoy, LMU München.</div>`;
   show('detail');
+}
+function showFazit(){
+  const f=FAZIT; if(!f){return;}
+  const blocks=f.blocks.map((b,i)=>`<div class="block"><h2><span class="n">${i+1}</span>${b[0]}</h2>${b[1]}</div>`).join('');
+  document.getElementById('fazitpage').innerHTML=
+   `<span class="back" onclick="home()">← zurück zur Übersicht</span>
+    <div class="d-head"><div class="m">${f.untertitel}</div><h1>${f.titel}</h1></div>
+    <p class="lead">${f.lead}</p>
+    <div class="dl"><a class="btn gold" href="fazit.pdf" download>⬇ Fazit (PDF)</a>
+       <span class="btn" onclick="home()">↑ Übersicht</span></div>${blocks}
+    <div class="frame">Konzept &amp; Inhalt: Dr. Ergun Özsoy, LMU München. Quellen siehe <a onclick="showLit()">Literatur</a>.</div>`;
+  show('fazitpage');
 }
 function showLit(){
   let html=`<span class="back" onclick="home()">← zurück zur Übersicht</span>

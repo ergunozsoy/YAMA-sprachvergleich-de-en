@@ -223,4 +223,14 @@ if _md and os.path.exists(wpath):
 else:
     print("  (uebersprungen: markdown fehlt oder Datei nicht gefunden)")
 
+# ---- Fazit-PDF ------------------------------------------------------------
+print("Fazit:")
+fz=C.FAZIT
+fparts=[f'<div class="kicker">{fz["untertitel"]} &middot; Sprachvergleich</div>'
+        f'<h1>{fz["titel"]}</h1><p class="lead">{fz["lead"]}</p>']
+for i,(h,b) in enumerate(fz["blocks"]):
+    fparts.append(f'<div class="block"><h2><span class="num">{i+1}</span>{h}</h2>{b}</div>')
+fparts.append(f'<div class="foot">Stand: {DATE} &middot; Konzept &amp; Inhalt: Dr. Ergun &Ouml;zsoy, LMU M&uuml;nchen.</div>')
+render(f"{OUT}/fazit.pdf", "".join(fparts))
+
 print("\nFERTIG.")

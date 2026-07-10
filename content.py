@@ -522,6 +522,82 @@ LIT_INTRO = ("Auswahlbibliografie zum Sprachvergleich Deutsch–Englisch und zur
   "(sprachübergreifend, u. a. aus den DaZ-Literaturempfehlungen der LMU). "
   "Die Liste dient als Referenz – Konzept und Inhalt der Plattform stammen von Dr. Ergun Özsoy.")
 
+# === Fazit & Ausblick ======================================================
+FAZIT = dict(
+ titel="Fazit & Ausblick",
+ untertitel="Was der Sprachvergleich lehrt",
+ lead=("Zwanzig Themen in drei Modulen – und ein wiederkehrendes Muster: Das Deutsche wird "
+   "verständlicher, wenn man es durch die Brille des Englischen betrachtet. Dieses Fazit bündelt "
+   "die Befunde der Themen-Dossiers und formuliert Folgerungen für den DaZ-/DaF-Unterricht."),
+ blocks=[
+  ("Der Leitgedanke: Deutsch durch eine andere Brille",
+   P("Wer Deutsch als Erstsprache spricht, hält Genus, Verbzweitstellung oder Satzklammer für "
+     "selbstverständlich. Sichtbar werden diese Kategorien erst im Kontrast – durch die Brille einer "
+     "Sprache, die sie anders oder gar nicht kennt. Der Sprachvergleich macht so die Struktur des "
+     "Deutschen selbst zum Gegenstand: Was von innen „natürlich“ wirkt, erweist sich als <i>eine</i> "
+     "Bauform unter mehreren möglichen.")
+   +P("Der Nutzen ist doppelt. <b>Lernende</b> verstehen, warum ihnen das Deutsche an bestimmten "
+     "Stellen Mühe macht – und dass ihre „Fehler“ meist folgerichtige Hypothesen sind. <b>Lehrende</b> "
+     "gewinnen ein diagnostisches Raster: Sie erkennen, welche Lernerform aus der L1 stammt, welche im "
+     "Deutschen selbst angelegt ist – und wo die Erstsprache als Brücke trägt.")),
+  ("Was der Vergleich zeigt",
+   "<ul class='li'>"
+   "<li><b>Lernerfehler sind selten zufällig.</b> Sie folgen Regeln – entweder denen der Erstsprache "
+   "(<i>interlingual</i>) oder einer Übergeneralisierung des Deutschen (<i>intralingual</i>). Wer die "
+   "Ursache kennt, korrigiert gezielter.</li>"
+   "<li><b>Schwierigkeit ist relativ zur L1.</b> Für englischsprachige Lernende liegt die Hauptlast in "
+   "der Morphologie (Genus, Kasus, Adjektivdeklination) und in der Wortstellung (V2, Satzklammer, "
+   "Nebensatz) – genau dort, wo das Englische seine Flexion abgebaut und seine Satzstellung fixiert hat.</li>"
+   "<li><b>Verwandtschaft hilft – und täuscht.</b> Die gemeinsame germanische Herkunft liefert Kognaten, "
+   "parallele starke Verben und vertraute Konzepte; dieselbe Nähe erzeugt aber „falsche Freunde“ und "
+   "übertragene Muster ("+e("do")+"-support, Progressiv, englische Lautwerte vertrauter Buchstaben).</li>"
+   "<li><b>Jede Erstsprache bringt Ressourcen mit.</b> Reste von Kasus ("+e("him, whom")+"), Umlaut "
+   "("+e("man/men")+") und Verbzweit ("+e("Never have I seen …")+") zeigen: Vieles am Deutschen ist im "
+   "Englischen angelegt – es muss nur reaktiviert werden.</li></ul>"),
+  ("Das Profil der L1 Englisch: Hürden und Ressourcen",
+   P("Aus den zwanzig Einzelbefunden ergibt sich ein klares Gesamtprofil:")
+   +"<table><tr><th>Typische Hürden (aus L1-Sicht)</th><th>Ressourcen &amp; Brücken</th></tr>"
+   "<tr><td><ul class='li'>"
+   "<li>Kasus &amp; Adjektivdeklination – Flexion im Englischen weitgehend abgebaut</li>"
+   "<li>Genus &amp; Artikel – Kategorie ohne L1-Entsprechung</li>"
+   "<li>V2, Satzklammer, Nebensatz-Verbendstellung – festes SVO der L1</li>"
+   "<li>Zeitformen &amp; Aspekt – kein deutsches Progressiv, andere Perfekt-Verteilung</li>"
+   "<li>Substantivgroßschreibung – gegenläufige L1-Konvention</li>"
+   "<li>ö/ü, ich-/ach-Laut, Auslautverhärtung – neue Laute bzw. Lautregeln</li>"
+   "</ul></td><td><ul class='li'>"
+   "<li>Kognaten &amp; gemeinsamer Ablaut ("+e("sing/sang/sung")+" = "+d("singen/sang/gesungen")+")</li>"
+   "<li>Pronomen-Kasus ("+e("I/me, whom")+" → "+d("ich/mich, den/dem")+")</li>"
+   "<li>"+e("thou/thee")+" als historische du/dich-Parallele</li>"
+   "<li>"+e("into/in")+" ≈ Akkusativ/Dativ der Wechselpräpositionen</li>"
+   "<li>"+e("would / if I were")+" ≈ Konjunktiv II; "+e("get")+"-Passiv ≈ werden-Passiv</li>"
+   "<li>V2-Reste ("+e("Never have I …")+") und phrasal verbs ≈ trennbare Verben</li>"
+   "</ul></td></tr></table>"
+   +NOTE("Dasselbe Deutsch – aber ein eigenes Anforderungsprofil: Welche Themen „schwer“ sind, entscheidet die Erstsprache mit.")),
+  ("Folgerungen für den DaZ-/DaF-Unterricht",
+   "<ul class='li'>"
+   "<li><b>1 · Fehler diagnostisch lesen.</b> Lernerformen sind Fenster in die Lernersprache. Vor der "
+   "Korrektur steht die Ursachenfrage: interlingual, intralingual – oder ein normaler Entwicklungsschritt?</li>"
+   "<li><b>2 · Kontrastiv bewusst machen – gezielt und dosiert.</b> Sprachvergleich dort einsetzen, wo "
+   "die L1 systematisch interferiert oder eine Brücke bietet; er ist Werkzeug, kein Dauerprinzip.</li>"
+   "<li><b>3 · Ressourcen aktivieren.</b> Vorhandenes Wissen (Kognaten, Pronomen-Kasus, V2-Reste) "
+   "explizit nutzen: Neues an Bekanntem verankern statt bei null zu beginnen.</li>"
+   "<li><b>4 · Priorisieren.</b> Häufigkeit, Fossilisierungsgefahr und curriculares Gewicht bestimmen "
+   "die Reihenfolge – die ★-Kernthemen zuerst.</li>"
+   "<li><b>5 · Fehlertoleranz mit Korrekturplan.</b> Entwicklungsfehler zulassen, fossilisierungs­gefährdete "
+   "Kontraste (Adjektivdeklination, V2) dagegen früh und konsequent fördern.</li></ul>"),
+  ("Grenzen & Ausblick",
+   P("Der kontrastive Vergleich <b>erklärt und diagnostiziert</b> – er prognostiziert nicht alles. Die "
+     "starke Kontrastivhypothese gilt als überholt; Erwerb verläuft in Phasen, individuelle Faktoren "
+     "(Alter, Kontakt, Motivation) wirken mit, und viele „typische“ Fehler betreffen vor allem "
+     "erwachsene Lernende. Der Vergleich ist deshalb ein <i>Diagnose- und Erklärungsinstrument</i> im "
+     "Rahmen der Lernersprachen-Theorie – nicht ihr Ersatz.")
+   +P("Das Fünf-Schritte-Raster dieser Plattform ist auf weitere Erstsprachen übertragbar: Jede L1 "
+     "erzeugt ihr eigenes Profil aus Hürden und Ressourcen. Die Plattform bleibt ein lebendes "
+     "Arbeitsinstrument – Erweiterungen werden im Werkstattbericht dokumentiert; Quellen auf der "
+     "Literatur-Seite.")),
+ ])
+
 def app_json():
     return {"modules":MODULES,"detail":DETAIL,"sheets":SHEETS,
-            "sheetFor":SHEET_FOR,"blocknames":BLOCKNAMES,"lit":LIT,"litIntro":LIT_INTRO}
+            "sheetFor":SHEET_FOR,"blocknames":BLOCKNAMES,"lit":LIT,"litIntro":LIT_INTRO,
+            "fazit":FAZIT}
