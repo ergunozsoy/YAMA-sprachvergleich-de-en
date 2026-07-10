@@ -522,6 +522,52 @@ LIT_INTRO = ("Auswahlbibliografie zum Sprachvergleich Deutsch–Englisch und zur
   "(sprachübergreifend, u. a. aus den DaZ-Literaturempfehlungen der LMU). "
   "Die Liste dient als Referenz – Konzept und Inhalt der Plattform stammen von Dr. Ergun Özsoy.")
 
+# === Wegweiser (Kurzanleitung, nur Web) ===================================
+GUIDE = dict(
+ titel="Wegweiser",
+ untertitel="So nutzen Sie diese Plattform",
+ lead=("Was diese Plattform enthält, wie jedes Thema aufgebaut ist und auf welchen Wegen Sie "
+   "die Inhalte erschließen können – eine kurze Orientierung."),
+ blocks=[
+  ("Was diese Plattform ist",
+   P("Eine didaktische Plattform zur <b>kontrastiven Linguistik Deutsch–Englisch</b> für die "
+     "DaZ-/DaF-Lehramtsausbildung: Deutsch als Ziel-/Zweitsprache aus der Perspektive englischer "
+     "Muttersprachler. Sie umfasst <b>20 Themen</b> in drei Modulen (Laut &amp; Schrift · Morphologie · "
+     "Syntax), vier unterrichtsfertige <b>Arbeitsblätter</b> mit Lösungen, eine kommentierte "
+     "<b>Bibliografie</b> sowie ein <b>Fazit</b> und einen <b>Werkstattbericht</b> – alles auch als PDF.")),
+  ("Wie jedes Thema aufgebaut ist",
+   P("Alle Themen folgen demselben Fünf-Schritte-Raster:")
+   +"<ul class='li'>"
+   "<li><b>1 · Kontrastiver Befund</b> – deutsche und englische Struktur nebeneinander</li>"
+   "<li><b>2 · Didaktik &amp; DaZ-Relevanz</b> – warum und wann es im Unterricht zählt</li>"
+   "<li><b>3 · Interferenzanalyse</b> – Lernerform · Zielform · Ursache · Typ</li>"
+   "<li><b>4 · Korrektur &amp; Förderung</b> – konkrete Unterrichtswege</li>"
+   "<li><b>5 · Interkulturalität</b> – Mehrsprachigkeit als Ressource</li></ul>"
+   +P("<b>Lesekonventionen:</b> <span class='err'>Lernerform</span> (durchgestrichen) vs. "
+     "<span class='ok'>Zielform</span>; "+e("englische Tokens")+" kursiv in warmer Farbe, "
+     +d("deutsche Beispiele")+" in Schreibmaschinenschrift; die Herkunft eines Fehlers zeigt der Typ "
+     "<span class='tag typ il'>interlingual</span> (aus der L1) bzw. "
+     "<span class='tag typ al'>intralingual</span> (im Deutschen selbst angelegt).")),
+  ("Drei Wege durch die Themen",
+   "<ul class='li'>"
+   "<li><b>Systematisch:</b> den Modulen folgen (Laut &amp; Schrift → Morphologie → Syntax) – "
+   "die sprachsystematische Ordnung.</li>"
+   "<li><b>Nach Priorität:</b> im Menü <i>★ Nach Priorität</i> – Themen sortiert nach Häufigkeit, "
+   "Fossilisierungsgefahr und Lehrplan-Gewicht; <span class='kern' style='padding:1px 7px'>★ Kern</span>-Themen "
+   "lohnen den frühesten Zugriff.</li>"
+   "<li><b>Anlassbezogen (diagnostisch):</b> von einer beobachteten Lernerform ausgehen – über die "
+   "<i>Suche</i> das passende Thema finden und die Interferenzanalyse als Diagnosehilfe nutzen.</li></ul>"),
+  ("Materialien zum Mitnehmen",
+   P("Jedes Thema gibt es als <b>PDF-Dossier</b> (Button auf der Themenseite), dazu vier "
+     "<b>Arbeitsblätter mit Lösungsschlüssel</b>, die <b>Literaturliste</b>, das <b>Fazit</b> und den "
+     "<b>Werkstattbericht</b> als PDF – alle druckfertig im selben Layout.")),
+  ("Weiterführende Seiten",
+   P("<b>Fazit &amp; Ausblick</b> bündelt, was der Sprachvergleich lehrt (unten links im Menü). "
+     "Der <b>Werkstattbericht</b> dokumentiert, wie die Plattform entstanden ist. Die <b>Literatur</b>-Seite "
+     "belegt die Quellen – Titel mit ● liegen dem Projekt als Referenzmaterial vor. "
+     "Konzept &amp; Inhalt: Dr. Ergun Özsoy, LMU München.")),
+ ])
+
 # === Fazit & Ausblick ======================================================
 FAZIT = dict(
  titel="Fazit & Ausblick",
@@ -600,4 +646,4 @@ FAZIT = dict(
 def app_json():
     return {"modules":MODULES,"detail":DETAIL,"sheets":SHEETS,
             "sheetFor":SHEET_FOR,"blocknames":BLOCKNAMES,"lit":LIT,"litIntro":LIT_INTRO,
-            "fazit":FAZIT}
+            "fazit":FAZIT,"guide":GUIDE}
